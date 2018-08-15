@@ -18,6 +18,9 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
   },
+  node: {
+    fs: 'empty'
+  },
   module: {
     rules: [
       {
