@@ -6,9 +6,13 @@ const path = require('path'),
   middlewareHot = require('webpack-hot-middleware'),
   fs = require('fs'),
   app = express(),
+  Logger = require('../src/common/logger.js'),
   port = process.env.PORT || 4200;
 
+var tgLogger = new Logger("INFO", true, true, "server");
+
 app.listen(port, () => console.log(`Listening on port ${port}`));
+tgLogger.log("INFO", "this is a test", true);
 fs.writeFile(`${path.resolve(__dirname, path.basename(__filename, '.js'))}.pid`, process.pid, err => {
   if (err) console.log(err);
 });
